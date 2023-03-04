@@ -20,7 +20,7 @@ pointRouter.get("/getPoints", async (req, res) => {
     const users = await userModel.find().sort({ points: -1 });
     res.send(users);
   } catch (err) {
-    res.send("unable to get your data");
+    res.send(`unable to get your data ${err}`);
   }
 });
 
