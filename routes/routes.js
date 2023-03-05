@@ -18,7 +18,7 @@ pointRouter.post("/addPoints", async (req, res) => {
 
 pointRouter.get("/getPoints", async (req, res) => {
   try {
-    const users = await userModel.find().sort({ points: -1, date: 1 });
+    const users = await userModel.find().sort({ points: -1, date: -1 });
     res.send(users);
   } catch (err) {
     res.send(`unable to get your data ${err}`);
